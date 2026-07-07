@@ -1,0 +1,359 @@
+/* Portfolio Sections - Approach, Outcome, Explore3D */
+
+/* Our Approach */
+.portfolio-approach {
+  padding: 100px 0;
+  background-color: var(--bg-page, #050505);
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-approach__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+@media (min-width: 1024px) {
+  .portfolio-approach__grid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+  }
+}
+
+.portfolio-approach__collage-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.portfolio-approach__img-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.08));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease;
+}
+
+.portfolio-approach__img-wrap:hover {
+  transform: translateY(-4px);
+  border-color: rgba(230, 195, 131, 0.3);
+}
+
+.portfolio-approach__img-wrap--top,
+.portfolio-approach__img-wrap--bottom {
+  aspect-ratio: 16 / 9;
+}
+
+.portfolio-approach__img-wrap--hero {
+  height: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+@media (min-width: 1024px) {
+  .portfolio-approach__img-wrap--hero {
+    aspect-ratio: auto;
+    min-height: 600px;
+  }
+}
+
+.portfolio-approach__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.portfolio-approach__img-wrap:hover .portfolio-approach__image {
+  transform: scale(1.04);
+}
+
+.portfolio-approach__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.4) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* The Outcome */
+.portfolio-outcome {
+  padding: 100px 0;
+  background-color: var(--bg-page, #050505);
+}
+
+.portfolio-outcome__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+  .portfolio-outcome__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+.portfolio-outcome__card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.portfolio-outcome__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.01) 30%,
+    rgba(0, 0, 0, 0.02) 50%,
+    rgba(0, 0, 0, 0.01) 70%,
+    transparent 100%
+  );
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+
+.portfolio-outcome__card:hover::before {
+  left: 100%;
+}
+
+.portfolio-outcome__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(148, 117, 60, 0.25);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06), 0 0 40px rgba(148, 117, 60, 0.02);
+}
+
+.portfolio-outcome__card-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 1px;
+  background: gradient-gold;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.portfolio-outcome__card:hover .portfolio-outcome__card-glow {
+  opacity: 1;
+}
+
+.portfolio-outcome__value {
+  font-family: var(--font-sora);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #e6c383 0%, #b89556 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(230, 195, 131, 0.15));
+}
+
+.portfolio-outcome__label {
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted, #9b9b9b);
+}
+
+/* Explore in 3D */
+.portfolio-explore3d {
+  padding: 100px 0;
+  background-color: var(--bg-page, #050505);
+}
+
+.portfolio-explore3d__header-text {
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.portfolio-explore3d__launch {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 10;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 1024px) {
+  .portfolio-explore3d__launch {
+    aspect-ratio: 21 / 10; /* cinematic wide rectangle */
+  }
+}
+
+.portfolio-explore3d__launch:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(148, 117, 60, 0.25);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-explore3d__launch-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  padding: 40px;
+}
+
+@media (min-width: 768px) {
+  .portfolio-explore3d__launch-content {
+    flex-direction: row;
+    gap: 32px;
+    text-align: left;
+    max-width: 600px;
+  }
+}
+
+.portfolio-explore3d__launch-btn {
+  width: 64px;
+  height: 64px;
+  background-color: var(--accent, #e6c383);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s;
+  box-shadow: 0 0 20px rgba(230, 195, 131, 0.4);
+}
+
+.portfolio-explore3d__launch:hover .portfolio-explore3d__launch-btn {
+  transform: scale(1.1);
+  background-color: var(--accent-light, #f3d59a);
+}
+
+.portfolio-explore3d__launch-title {
+  font-family: var(--font-sora);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #ffffff);
+  margin-bottom: 8px;
+}
+
+.portfolio-explore3d__launch-sub {
+  font-family: var(--font-inter);
+  font-size: 0.9rem;
+  color: var(--text-muted, #9b9b9b);
+}
+
+.portfolio-explore3d__card {
+  max-width: 1100px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .portfolio-explore3d__card {
+    aspect-ratio: 21 / 10; /* cinematic wide rectangle */
+  }
+}
+
+.portfolio-explore3d__card:hover {
+  border-color: rgba(230, 195, 131, 0.25);
+}
+
+.portfolio-explore3d__header {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.08));
+  background-color: #ffffff;
+}
+
+.portfolio-explore3d__model-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio-explore3d__model-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+.portfolio-explore3d__viewer-wrap {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.portfolio-explore3d__hint {
+  text-align: center;
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  color: var(--text-muted, #9b9b9b);
+  padding: 12px 24px;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.08));
+  margin: 0;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+.portfolio-explore3d__error-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.01);
+  border: 1px dashed rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+}

@@ -1,0 +1,200 @@
+.site-footer {
+  position: relative;
+  background-color: #ffffff;
+  color: #000000;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Big blurry ARCHADIA word in the background */
+.site-footer::before {
+  content: "ARCHADIA";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  font-size: clamp(4rem, 11.5vw, 11.5rem);
+  color: #000000;
+  opacity: 0.018;
+  filter: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main Footer Columns */
+.site-footer__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 6vw;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 48px 40px;
+  align-items: start;
+}
+
+/* Brand info column */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.site-footer__logo {
+  display: inline-flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-family: var(--font-sora);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.15em;
+  outline: none;
+}
+
+.site-footer__logo-light {
+  color: #000000;
+}
+
+.site-footer__logo-gold {
+  color: var(--accent);
+}
+
+.site-footer__brand-desc {
+  font-family: var(--font-inter);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+  max-width: 260px;
+}
+
+/* Social link buttons */
+.site-footer__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.site-footer__social-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-muted);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.site-footer__social-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: rgba(230, 195, 131, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(230, 195, 131, 0.12);
+}
+
+/* General column styling */
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer__heading {
+  font-family: var(--font-sora);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin: 0 0 24px 0;
+}
+
+.site-footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.site-footer__list li a,
+.site-footer__contact-link,
+.site-footer__contact-text {
+  font-family: var(--font-inter);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  outline: none;
+  line-height: 1.4;
+}
+
+.site-footer__list li a:hover,
+.site-footer__contact-link:hover {
+  color: var(--accent);
+}
+
+/* Bottom Bar */
+.site-footer__bottom {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.site-footer__bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-footer__copyright {
+  font-family: var(--font-inter);
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.site-footer__tagline {
+  font-family: var(--font-inter);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.35);
+}
+
+/* Responsiveness Media Queries */
+@media (max-width: 1024px) {
+  .site-footer__inner {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .site-footer__bottom-inner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
