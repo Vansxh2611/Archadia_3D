@@ -34,8 +34,8 @@ export default function Navbar() {
             aria-label="ARCHADIA 3D - Go to home"
             onClick={closeMenu}
           >
-            <span className="font-sora font-bold text-xl tracking-[0.15em] navbar-logo-text">ARCHADIA</span>
-            <span className="font-sora font-bold text-xl tracking-[0.15em] text-[#E6C383]"> 3D</span>
+            <span className="font-sora font-bold text-base sm:text-lg md:text-xl tracking-[0.12em] navbar-logo-text">ARCHADIA</span>
+            <span className="font-sora font-bold text-base sm:text-lg md:text-xl tracking-[0.12em] text-[#E6C383]"> 3D</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -65,12 +65,13 @@ export default function Navbar() {
           </ul>
 
           {/* CTA */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2.5 sm:gap-4">
             <Link
               href="/contact"
-              className="btn btn-secondary btn-sm hidden lg:flex"
+              className="btn btn-secondary btn-sm flex whitespace-nowrap !px-3 !py-1.5 sm:!px-4 sm:!py-2 !text-[10px] sm:!text-xs"
             >
-              Start a Project
+              <span className="inline lg:hidden">Start Project</span>
+              <span className="hidden lg:inline">Start a Project</span>
             </Link>
 
             {/* Mobile Hamburger */}

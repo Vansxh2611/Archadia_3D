@@ -827,6 +827,11 @@ section.bg-bg-secondary,
   color: #ffffff !important;
 }
 
+.btn span,
+.btn svg {
+  color: inherit !important;
+}
+
 .text-white\/70, .text-white\/80, .text-white\/60, .text-white\/90 {
   color: rgba(0, 0, 0, 0.7) !important;
 }
