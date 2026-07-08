@@ -574,12 +574,7 @@
   object-fit: cover;
 }
 
-/* Desktop only */
-@media (max-width: 767px) {
-  .arch-letter__preview {
-    display: none !important;
-  }
-}
+
 
 
 /* Very soft vignette disabled for light theme compatibility */

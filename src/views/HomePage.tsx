@@ -41,7 +41,7 @@ export default function HomePage() {
         <CTASection />
       </SectionReveal>
       <SectionDivider />
-      
+
       {/* Expanded Sections */}
       <SectionReveal>
         <ServicesGrid />

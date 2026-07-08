@@ -312,18 +312,21 @@
   .container-luxury {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   @media (min-width: 640px) {
     .container-luxury {
-      padding: 0 4rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
     }
   }
 
   @media (min-width: 1280px) {
     .container-luxury {
-      padding: 0 7rem;
+      padding-left: 7rem;
+      padding-right: 7rem;
     }
   }
 
@@ -452,8 +455,7 @@
   }
 
   /* Base button settings (default to md size) */
-  button.btn,
-  a.btn {
+  .btn {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -479,14 +481,12 @@
   }
 
   /* Size overrides */
-  button.btn-sm,
-  a.btn-sm {
+  .btn-sm {
     padding: 0.5rem 1.2rem;
     font-size: 0.75rem;
   }
 
-  button.btn-lg,
-  a.btn-lg {
+  .btn-lg {
     padding: 0.95rem 2.25rem;
     font-size: 0.95rem;
   }
@@ -499,21 +499,18 @@
     transition: transform 160ms ease-out;
   }
 
-  button.btn:hover .btn__icon-right,
-  a.btn:hover .btn__icon-right {
+  .btn:hover .btn__icon-right {
     transform: translateX(3px);
   }
 
   /* Accessible focus-visible state */
-  button.btn:focus-visible,
-  a.btn:focus-visible {
+  .btn:focus-visible {
     outline: 2px solid var(--btn-gold);
     outline-offset: 3px;
   }
 
   /* Disabled state */
-  button.btn:disabled,
-  a.btn:disabled {
+  .btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     box-shadow: none;
@@ -521,8 +518,7 @@
   }
 
   /* ===== Primary - Gold Filled ===== */
-  button.btn-primary,
-  a.btn-primary {
+  .btn-primary {
     color: #ffffff !important;
     background: linear-gradient(135deg, var(--btn-gold), var(--btn-gold-dark));
     border-color: rgba(255, 255, 255, 0.08);
@@ -531,8 +527,7 @@
       0 0 0 1px rgba(0, 0, 0, 0.2);
   }
 
-  button.btn-primary:hover,
-  a.btn-primary:hover {
+  .btn-primary:hover {
     transform: translateY(-1px);
     background: linear-gradient(135deg, var(--btn-gold-light), var(--btn-gold));
     box-shadow:
@@ -540,8 +535,7 @@
       0 0 0 1px rgba(0, 0, 0, 0.25);
   }
 
-  button.btn-primary:active,
-  a.btn-primary:active {
+  .btn-primary:active {
     transform: translateY(1px) scale(0.98);
     box-shadow:
       0 6px 16px rgba(0, 0, 0, 0.4),
@@ -549,8 +543,7 @@
   }
 
   /* ===== Secondary - Dark Glass Outline ===== */
-  button.btn-secondary,
-  a.btn-secondary {
+  .btn-secondary {
     color: #F5F5F5;
     background: rgba(5, 5, 5, 0.8);
     border-color: rgba(255, 255, 255, 0.12);
@@ -561,8 +554,7 @@
     -webkit-backdrop-filter: blur(18px);
   }
 
-  button.btn-secondary:hover,
-  a.btn-secondary:hover {
+  .btn-secondary:hover {
     background: #94753c !important;
     color: #ffffff !important;
     border-color: #94753c !important;
@@ -570,15 +562,12 @@
     box-shadow: 0 12px 30px rgba(148, 117, 60, 0.25) !important;
   }
 
-  button.btn-secondary:hover svg,
-  a.btn-secondary:hover svg,
-  button.btn-secondary:hover span,
-  a.btn-secondary:hover span {
+  .btn-secondary:hover svg,
+  .btn-secondary:hover span {
     color: #ffffff !important;
   }
 
-  button.btn-secondary:active,
-  a.btn-secondary:active {
+  .btn-secondary:active {
     transform: translateY(1px) scale(0.98);
     box-shadow:
       0 6px 16px rgba(0, 0, 0, 0.4),
@@ -586,8 +575,7 @@
   }
 
   /* ===== Ghost - Text Underline Slide ===== */
-  button.btn-ghost,
-  a.btn-ghost {
+  .btn-ghost {
     background: transparent;
     color: #94753c !important;
     border-color: transparent;
@@ -596,13 +584,11 @@
     box-shadow: none;
   }
 
-  button.btn-ghost:hover,
-  a.btn-ghost:hover {
+  .btn-ghost:hover {
     color: #7d612e !important;
   }
 
-  button.btn-ghost::after,
-  a.btn-ghost::after {
+  .btn-ghost::after {
     content: "";
     position: absolute;
     left: 0;
@@ -621,15 +607,13 @@
     opacity: 0;
   }
 
-  button.btn-ghost:hover::after,
-  a.btn-ghost:hover::after {
+  .btn-ghost:hover::after {
     transform: scaleX(1);
     opacity: 1;
   }
 
   /* === Global Glass Capsule Buttons === */
-  button.pill-button,
-  a.pill-button {
+  .pill-button {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -712,22 +696,19 @@
   }
 
   /* Active count variant */
-  button.pill-button--active .pill-button__count,
-  a.pill-button--active .pill-button__count {
+  .pill-button--active .pill-button__count {
     background: rgba(255, 255, 255, 0.2);
     color: #ffffff;
   }
 
   /* Optional: small pill sizing helper */
-  button.pill-button--sm,
-  a.pill-button--sm {
+  .pill-button--sm {
     padding: 0.35rem 0.9rem;
     font-size: 0.72rem;
   }
 
   /* === Global Glass Circle Buttons === */
-  button.btn-circle,
-  a.btn-circle {
+  .btn-circle {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
@@ -749,8 +730,7 @@
       transform 140ms ease-out;
   }
 
-  button.btn-circle:hover,
-  a.btn-circle:hover {
+  .btn-circle:hover {
     background: rgba(0, 0, 0, 0.04);
     border-color: var(--btn-gold);
     color: var(--btn-gold);
@@ -758,14 +738,12 @@
     transform: translateY(-1px);
   }
 
-  button.btn-circle:active,
-  a.btn-circle:active {
+  .btn-circle:active {
     transform: translateY(0);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
   }
 
-  button.btn-circle:focus-visible,
-  a.btn-circle:focus-visible {
+  .btn-circle:focus-visible {
     outline: 2px solid var(--btn-gold);
     outline-offset: 3px;
   }

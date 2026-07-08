@@ -94,7 +94,7 @@ export default function Navbar() {
             id="mobile-nav"
             role="dialog"
             aria-label="Mobile navigation"
-            className="fixed inset-0 z-40 flex flex-col pt-24 pb-10 px-8 lg:hidden"
+            className="fixed inset-0 z-40 flex flex-col pt-24 pb-10 px-8 lg:hidden overflow-y-auto"
             style={{ background: 'rgba(5,5,5,0.97)', backdropFilter: 'blur(24px)' }}
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}

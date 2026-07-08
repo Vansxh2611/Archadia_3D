@@ -95,7 +95,7 @@ export default function CinematicHero() {
     <section
       id="home"
       ref={containerRef}
-      className="relative min-h-screen w-full flex items-center overflow-hidden bg-bg-primary select-none"
+      className="relative min-h-screen w-full flex items-start lg:items-center overflow-x-hidden overflow-y-visible bg-bg-primary select-none"
     >
 
 
@@ -188,7 +188,7 @@ export default function CinematicHero() {
       )} */}
 
       {/* LAYER 5: Hero Content & Grid (z-10) */}
-      <div className="container-luxury relative z-10 w-full pt-28 pb-16">
+      <div className="container-luxury relative z-10 w-full pt-32 pb-16 lg:pt-28">
         {/* Floating Camera Drift Wrapper - disables during reduced motion */}
         <motion.div
           animate={
@@ -204,7 +204,7 @@ export default function CinematicHero() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="grid lg:grid-cols-12 gap-16 lg:gap-10 xl:gap-16 items-center will-change-transform"
+          className="grid lg:grid-cols-12 gap-10 lg:gap-10 xl:gap-16 items-center will-change-transform"
         >
           {/* Left Column Content Section */}
           <div className="lg:col-span-6 flex flex-col justify-center">
@@ -227,7 +227,7 @@ export default function CinematicHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="font-sora font-extrabold leading-[0.95] mb-8 text-text-primary"
-              style={{ fontSize: 'clamp(48px, 6.5vw, 84px)', letterSpacing: '-0.03em' }}
+              style={{ fontSize: 'clamp(40px, 7.5vw, 80px)', letterSpacing: '-0.03em' }}
             >
               Cinematic
               <br />
@@ -239,7 +239,7 @@ export default function CinematicHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="font-inter text-text-secondary text-lg leading-relaxed mb-10 max-w-[500px]"
+              className="font-inter text-text-secondary text-base md:text-lg leading-relaxed mb-10 max-w-[500px]"
             >
               We craft emotional visual narratives, turning drawing scripts and blueprints into photorealistic, breathtaking digital worlds for India's finest architectural works.
             </motion.p>

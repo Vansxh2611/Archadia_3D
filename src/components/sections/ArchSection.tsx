@@ -175,6 +175,8 @@ export default function ArchSection() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [activeMobileIndex, setActiveMobileIndex] = useState<number>(0);
+  const [isCyclingPaused, setIsCyclingPaused] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia('(min-width: 768px)');
@@ -183,6 +185,22 @@ export default function ArchSection() {
     media.addEventListener('change', listener);
     return () => media.removeEventListener('change', listener);
   }, []);
+
+  useEffect(() => {
+    if (isDesktop || isCyclingPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveMobileIndex((prev) => (prev + 1) % LETTERS.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isDesktop, isCyclingPaused]);
+
+  const handleLetterClick = (index: number) => {
+    if (isDesktop) return;
+    setActiveMobileIndex(index);
+    setIsCyclingPaused(true);
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const MathRect = e.currentTarget.getBoundingClientRect();
@@ -227,18 +245,19 @@ export default function ArchSection() {
           </h2>
           <div className="relative flex items-center justify-between w-full gap-2 sm:gap-4 md:gap-6 lg:gap-8">
             {LETTERS.map((letter, i) => {
-              const isHovered = isDesktop && hoveredIndex === i;
+              const isHovered = isDesktop ? hoveredIndex === i : activeMobileIndex === i;
               return (
                 <Fragment key={letter.char}>
                   {/* Outer column cell that centers the letter within its 25% column slot */}
                   <div className="flex-1 flex justify-center items-center">
                     {/* Individual Letter SVG Mask Container with Hover/Focus handlers */}
                     <div
-                      className="relative arch-letter aspect-[3/4] w-full max-w-[200px] md:max-w-[230px] lg:max-w-[245px]"
+                      className="relative arch-letter aspect-[3/4] w-full max-w-[200px] md:max-w-[230px] lg:max-w-[245px] cursor-pointer"
                       onMouseEnter={() => setHoveredIndex(i)}
                       onMouseLeave={() => setHoveredIndex(null)}
                       onFocus={() => setHoveredIndex(i)}
                       onBlur={() => setHoveredIndex(null)}
+                      onClick={() => handleLetterClick(i)}
                       tabIndex={0}
                     >
                       <motion.div
@@ -247,7 +266,7 @@ export default function ArchSection() {
                           scale: isHovered ? 0.94 : 1,
                           y: isHovered ? 12 : 0,
                         }}
-                        transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
                         className="w-full h-full flex flex-col"
                       >
                         <LetterMask
@@ -271,23 +290,23 @@ export default function ArchSection() {
                             initial={{ opacity: 0, scale: 0.94, y: -10 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.94, y: -10 }}
-                            transition={{ duration: 0.75, ease: [0.25, 1, 0.5, 1] }}
+                            transition={{ duration: 0.8, ease: "easeInOut" }}
                           >
                             <motion.img
                               src={letter.img}
                               alt={letter.title}
                               className="w-full h-full object-cover"
-                              initial={{ scale: 1.18 }}
+                              initial={{ scale: 1.12 }}
                               animate={{ scale: 1 }}
-                              exit={{ scale: 1.18 }}
-                              transition={{ duration: 1.2, ease: 'easeInOut' }}
+                              exit={{ scale: 1.12 }}
+                              transition={{ duration: 1.2, ease: "easeInOut" }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                             <motion.div
-                              initial={{ y: 12, opacity: 0 }}
+                              initial={{ y: 8, opacity: 0 }}
                               animate={{ y: 0, opacity: 1 }}
-                              exit={{ y: 12, opacity: 0 }}
-                              transition={{ delay: 0.2, duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+                              exit={{ y: 8, opacity: 0 }}
+                              transition={{ delay: 0.1, duration: 0.6, ease: "easeInOut" }}
                               className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20"
                             >
                               <div className="px-4 py-2 bg-[#0F0F0F]/85 backdrop-blur-md border border-white/10 rounded-full whitespace-nowrap shadow-lg">
