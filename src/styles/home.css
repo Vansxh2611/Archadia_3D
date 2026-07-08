@@ -1,13 +1,13 @@
 /* Theme & tokens */
 :root {
-  --bg-page: #ffffff;
-  --bg-card: #ffffff;
-  --bg-card-soft: #ffffff;
-  --accent: #94753c;
-  --accent-light: #ab8a4c;
-  --text-primary: #000000;
-  --text-muted: #4b5563;
-  --border-subtle: rgba(0, 0, 0, 0.08);
+  --bg-page: #FAF8F5;
+  --bg-card: #FCFAF7;
+  --bg-card-soft: #F3EFEA;
+  --accent: #9E7E47;
+  --accent-light: #B5945B;
+  --text-primary: #1D1C1A;
+  --text-muted: #6A665E;
+  --border-subtle: rgba(158, 126, 71, 0.12);
   --font-sora: 'Sora', sans-serif;
   --font-inter: 'Inter', sans-serif;
 }
@@ -58,11 +58,11 @@
 }
 
 .services-grid__card {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(252, 250, 247, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(158, 126, 71, 0.12);
+  box-shadow: 0 15px 40px rgba(158, 126, 71, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   padding: 40px 32px;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -71,16 +71,16 @@
 
 .services-grid__card:hover {
   transform: translateY(-8px);
-  border-color: rgba(148, 117, 60, 0.25);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 0 40px rgba(148, 117, 60, 0.02);
+  border-color: rgba(158, 126, 71, 0.3);
+  background: rgba(252, 250, 247, 0.95);
+  box-shadow: 0 25px 50px rgba(158, 126, 71, 0.06), 0 0 40px rgba(158, 126, 71, 0.02);
 }
 
 .services-grid__icon {
   width: 44px;
   height: 44px;
-  background-color: rgba(148, 117, 60, 0.08);
-  border: 1px solid rgba(148, 117, 60, 0.15);
+  background-color: rgba(158, 126, 71, 0.08);
+  border: 1px solid rgba(158, 126, 71, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,11 +117,11 @@
 }
 
 .selected-works__card {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(252, 250, 247, 0.82);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(158, 126, 71, 0.12);
+  box-shadow: 0 15px 40px rgba(158, 126, 71, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   overflow: hidden;
   position: relative;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -129,9 +129,9 @@
 
 .selected-works__card:hover {
   transform: translateY(-6px);
-  border-color: rgba(148, 117, 60, 0.25);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 0 40px rgba(148, 117, 60, 0.02);
+  border-color: rgba(158, 126, 71, 0.3);
+  background: rgba(252, 250, 247, 0.95);
+  box-shadow: 0 25px 50px rgba(158, 126, 71, 0.06), 0 0 40px rgba(158, 126, 71, 0.02);
 }
 
 .selected-works__image-wrapper {

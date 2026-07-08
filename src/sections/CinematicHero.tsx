@@ -109,34 +109,34 @@ export default function CinematicHero() {
       >
         {/* Precision CSS structural grid lines */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.06]"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px)
+              linear-gradient(rgba(158, 126, 71, 0.08) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(158, 126, 71, 0.08) 1px, transparent 1px)
             `,
             backgroundSize: '90px 90px',
           }}
         />
 
         {/* Decorative blueprint technical drawing symbols */}
-        <div className="absolute top-[20%] right-[45%] w-32 h-32 rounded-full border border-black/[0.04] flex items-center justify-center">
-          <div className="w-16 h-16 rounded-full border border-dashed border-black/[0.03]" />
-          <div className="absolute h-full w-px bg-black/[0.02] rotate-45" />
-          <div className="absolute h-full w-px bg-black/[0.02] -rotate-45" />
+        <div className="absolute top-[20%] right-[45%] w-32 h-32 rounded-full border border-[#6A665E]/12 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full border border-dashed border-[#6A665E]/8" />
+          <div className="absolute h-full w-px bg-[#6A665E]/6 rotate-45" />
+          <div className="absolute h-full w-px bg-[#6A665E]/6 -rotate-45" />
         </div>
 
-        <div className="absolute bottom-[25%] left-[48%] w-48 h-48 rounded-full border border-black/[0.02] flex items-center justify-center">
-          <div className="w-24 h-24 rounded-full border border-black/[0.03]" />
-          <div className="absolute w-full h-px bg-black/[0.02]" />
-          <div className="absolute h-full w-px bg-black/[0.02]" />
+        <div className="absolute bottom-[25%] left-[48%] w-48 h-48 rounded-full border border-[#6A665E]/10 flex items-center justify-center">
+          <div className="w-24 h-24 rounded-full border border-[#6A665E]/8" />
+          <div className="absolute w-full h-px bg-[#6A665E]/6" />
+          <div className="absolute h-full w-px bg-[#6A665E]/6" />
         </div>
 
         {/* Geometric crosshairs in viewport corners */}
-        <div className="absolute top-10 left-10 w-6 h-6 border-t border-l border-black/[0.08]" />
-        <div className="absolute top-10 right-10 w-6 h-6 border-t border-r border-black/[0.08]" />
-        <div className="absolute bottom-10 left-10 w-6 h-6 border-b border-l border-black/[0.08]" />
-        <div className="absolute bottom-10 right-10 w-6 h-6 border-b border-r border-black/[0.08]" />
+        <div className="absolute top-10 left-10 w-6 h-6 border-t border-l border-[#6A665E]/20" />
+        <div className="absolute top-10 right-10 w-6 h-6 border-t border-r border-[#6A665E]/20" />
+        <div className="absolute bottom-10 left-10 w-6 h-6 border-b border-l border-[#6A665E]/20" />
+        <div className="absolute bottom-10 right-10 w-6 h-6 border-b border-r border-[#6A665E]/20" />
       </motion.div>
 
       {/* LAYER 3: Memoized drifting dust particles (z-0) */}

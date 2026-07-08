@@ -112,20 +112,20 @@ export const Preloader: React.FC<PreloaderProps> = ({
       initial="visible"
       animate={isExiting ? 'exit' : 'visible'}
       onAnimationComplete={handleAnimationComplete}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#ffffff] text-text-primary select-none pointer-events-auto overflow-hidden"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAF8F5] text-text-primary select-none pointer-events-auto overflow-hidden"
     >
       {/* BACKGROUND LAYER 1: Subtle Vignette and Grid */}
       <div
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        className="absolute inset-0 opacity-[0.06] pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px)
+            linear-gradient(rgba(158, 126, 71, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(158, 126, 71, 0.08) 1px, transparent 1px)
           `,
           backgroundSize: '90px 90px',
         }}
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(255,255,255,0.85)_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(250,248,245,0.85)_100%)] pointer-events-none" />
 
       {/* BACKGROUND LAYER 2: Decorative Technical Drafting Layouts */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.07]">

@@ -3,7 +3,7 @@
 /* Our Approach */
 .portfolio-approach {
   padding: 100px 0;
-  background-color: var(--bg-page, #050505);
+  background-color: #ffffff;
   position: relative;
   overflow: hidden;
 }
@@ -356,4 +356,78 @@
   border-radius: 12px;
   padding: 40px;
   text-align: center;
+}
+
+/* Selected Works Card Styles adapted for Portfolio Grid */
+.selected-works__card {
+  background: var(--bg-card, rgba(255, 255, 255, 0.82));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.08));
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.selected-works__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(148, 117, 60, 0.3);
+  background: var(--bg-card, rgba(255, 255, 255, 0.95));
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05), 0 0 40px rgba(148, 117, 60, 0.02);
+}
+
+.selected-works__image-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.selected-works__image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.03) 0%, transparent 40%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.selected-works__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.selected-works__card:hover .selected-works__image {
+  transform: scale(1.04);
+}
+
+.selected-works__info {
+  padding: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.selected-works__category {
+  font-family: var(--font-inter);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent, #94753c);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.selected-works__work-title {
+  font-family: var(--font-sora);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary, #000000);
+}
+
+.selected-works__client {
+  font-family: var(--font-inter);
+  font-size: 0.8rem;
+  color: var(--text-muted, #6b7280);
 }

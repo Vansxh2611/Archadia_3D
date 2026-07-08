@@ -60,46 +60,29 @@ function PortfolioCard({ item, index }: { item: PortfolioItem; index: number }) 
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.6, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative overflow-hidden rounded-2xl cursor-pointer card-shadow ${item.tall ? 'row-span-2' : ''
-        }`}
-      style={{ minHeight: item.tall ? '500px' : '300px' }}
+      className={`group relative overflow-hidden rounded-2xl cursor-pointer selected-works__card flex flex-col ${
+        item.tall ? 'row-span-2' : ''
+      }`}
+      style={{ minHeight: item.tall ? '620px' : '300px' }}
     >
-      <img
-        src={item.image}
-        alt={item.title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        loading="lazy"
-      />
-
-      {/* Base overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent" />
-
-      {/* Hover gold overlay */}
-      <div className="absolute inset-0 bg-[#E6C383]/0 group-hover:bg-[#E6C383]/08 transition-colors duration-500" />
-
-      {/* Gold border on hover */}
-      <div className="absolute inset-0 border border-[#E6C383]/0 group-hover:border-[#E6C383]/40 rounded-2xl transition-colors duration-500" />
-
-      {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-end p-6">
-        <div className="translate-y-3 group-hover:translate-y-0 transition-transform duration-400">
-          <span className="inline-block font-inter text-[10px] tracking-[0.3em] text-[#E6C383] uppercase mb-2 opacity-80">
-            {item.category}
-          </span>
-          <h3 className="font-sora font-bold text-white text-xl mb-1">{item.title}</h3>
-          <p className="font-inter text-[#B8B8B8] text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-            {item.subtitle}
-          </p>
+      <figure className="selected-works__image-wrapper w-full flex-grow overflow-hidden relative">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="selected-works__image w-full h-full object-cover"
+          loading="lazy"
+        />
+        {/* Floating View Link icon overlay inside the image */}
+        <div className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center border border-[#94753c]/0 group-hover:border-[#94753c]/40 rounded-full opacity-0 group-hover:opacity-100 bg-white/70 backdrop-blur-sm transition-all duration-500 z-10">
+          <ExternalLink size={14} className="text-[#94753c]" />
         </div>
-      </div>
+      </figure>
 
-      {/* View icon on hover */}
-      <div className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center border border-[#E6C383]/0 group-hover:border-[#E6C383]/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500">
-        <ExternalLink size={14} className="text-[#E6C383]" />
+      <div className="selected-works__info w-full bg-bg-card border-t border-black/[0.04]">
+        <span className="selected-works__category">{item.category}</span>
+        <h3 className="selected-works__work-title !text-lg !mb-1.5 !font-bold">{item.title}</h3>
+        <p className="selected-works__client">{item.subtitle}</p>
       </div>
-
-      {/* Corner accent */}
-      <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-[#E6C383]/0 group-hover:border-[#E6C383]/60 transition-colors duration-500" />
     </motion.div>
   );
 }
@@ -123,15 +106,15 @@ export default function PortfolioPage() {
   };
 
   return (
-    <main className="bg-[#050505] min-h-screen">
+    <main className="bg-bg-primary min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end pb-20 overflow-hidden bg-[#050505]">
-        <div className="absolute inset-0 bg-grid opacity-30" />
+      <section className="relative min-h-[60vh] flex items-end pb-20 overflow-hidden bg-bg-primary">
+        <div className="absolute inset-0 bg-grid opacity-[0.06] pointer-events-none" />
         <div
-          className="absolute top-1/2 left-1/3 w-[800px] h-[500px] rounded-full opacity-[0.06] blur-[130px]"
-          style={{ background: 'radial-gradient(circle, #E6C383 0%, transparent 70%)' }}
+          className="absolute top-1/2 left-1/3 w-[800px] h-[500px] rounded-full opacity-[0.04] blur-[130px]"
+          style={{ background: 'radial-gradient(circle, var(--color-gold) 0%, transparent 70%)' }}
         />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050505] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-bg-primary to-transparent" />
 
         <div className="container-luxury relative z-10 pt-40">
           <motion.div
@@ -139,15 +122,15 @@ export default function PortfolioPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="font-inter text-xs tracking-[0.3em] text-[#E6C383] uppercase mb-6 block">Our Work</span>
+            <span className="font-inter text-xs tracking-[0.3em] text-gold uppercase mb-6 block">Our Work</span>
             <h1
-              className="font-sora font-bold text-white leading-[0.95] mb-6"
+              className="font-sora font-bold text-text-primary leading-[0.95] mb-6"
               style={{ fontSize: 'clamp(52px, 8vw, 96px)' }}
             >
               Selected{' '}
               <span className="gradient-gold">Works</span>
             </h1>
-            <p className="font-inter text-[#B8B8B8] text-xl max-w-xl leading-relaxed">
+            <p className="font-inter text-text-secondary text-xl max-w-xl leading-relaxed">
               A curated collection of our most visionary architectural visualization projects from across India.
             </p>
           </motion.div>
@@ -248,14 +231,14 @@ export default function PortfolioPage() {
       <SectionDivider />
 
       {/* CTA */}
-      <SectionReveal as="section" className="relative bg-[#0E0E0E] py-28 overflow-hidden">
+      <SectionReveal as="section" className="relative bg-bg-secondary py-28 overflow-hidden border-t border-black/[0.05]">
         <div
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
           aria-hidden="true"
         >
           <div
-            className="w-[600px] h-[350px] blur-[160px] opacity-[0.09]"
-            style={{ background: 'radial-gradient(ellipse, #E6C383 0%, transparent 65%)' }}
+            className="w-[600px] h-[350px] blur-[160px] opacity-[0.05]"
+            style={{ background: 'radial-gradient(ellipse, var(--color-gold) 0%, transparent 65%)' }}
           />
         </div>
         <div className="container-luxury relative text-center">
@@ -265,12 +248,12 @@ export default function PortfolioPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-inter text-xs tracking-[0.3em] text-[#E6C383] uppercase mb-6 block">Your Project</span>
-            <h2 className="font-sora font-bold text-white mb-6" style={{ fontSize: 'clamp(32px, 5vw, 60px)' }}>
+            <span className="font-inter text-xs tracking-[0.3em] text-gold uppercase mb-6 block">Your Project</span>
+            <h2 className="font-sora font-bold text-text-primary mb-6" style={{ fontSize: 'clamp(32px, 5vw, 60px)' }}>
               Ready to be our next{' '}
               <span className="gradient-gold">masterpiece?</span>
             </h2>
-            <p className="font-inter text-[#B8B8B8] text-lg mb-10 max-w-lg mx-auto">
+            <p className="font-inter text-text-secondary text-lg mb-10 max-w-lg mx-auto">
               Every project in this portfolio started with a single conversation. Let's start yours.
             </p>
             <Link

@@ -18,7 +18,7 @@ export const BuildingViewerSection: React.FC = () => {
       <div className="absolute top-8 right-[15%] w-px h-full bg-black/[0.02] pointer-events-none" />
 
       <div className="container-luxury relative z-10 w-full flex flex-col justify-between min-h-[80vh] gap-12">
-        
+
         {/* HEADER: Section Typography Intro */}
         <div className="max-w-[700px] flex flex-col items-center mx-auto text-center">
           {/* Eyebrow Label */}

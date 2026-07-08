@@ -21,13 +21,13 @@ export const PortfolioOutcome: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="portfolio-outcome__header"
         >
-          <span className="font-inter text-xs tracking-[0.3em] text-[#E6C383] uppercase mb-4 block">
+          <span className="font-inter text-xs tracking-[0.3em] text-accent uppercase mb-4 block">
             The Impact
           </span>
-          <h2 className="font-sora font-bold text-white mb-6" style={{ fontSize: 'clamp(32px, 5vw, 52px)' }}>
+          <h2 className="font-sora font-bold text-text-primary mb-6" style={{ fontSize: 'clamp(32px, 5vw, 52px)' }}>
             The <span className="gradient-gold">Outcome</span>
           </h2>
-          <p className="font-inter text-[#B8B8B8] text-lg max-w-2xl mb-12 leading-relaxed">
+          <p className="font-inter text-text-secondary text-lg max-w-2xl mb-12 leading-relaxed">
             Visualizations that do more than showcase architecture — they deliver concrete results, accelerate pre-sales timelines, and elevate brand equity.
           </p>
         </motion.div>

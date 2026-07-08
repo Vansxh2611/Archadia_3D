@@ -63,10 +63,10 @@ export default function StudioSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={leftVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="absolute -bottom-8 -right-4 glass rounded-2xl p-5 gold-glow text-center"
+              className="absolute -bottom-8 -right-4 gold-glass-badge rounded-2xl p-5 text-center"
             >
-              <div className="font-inter text-text-secondary text-xs tracking-widest uppercase mb-1">Est.</div>
-              <div className="font-sora font-bold gradient-gold text-3xl">2012</div>
+              <div className="font-inter text-gold text-xs tracking-widest uppercase mb-1 font-semibold">Est.</div>
+              <div className="font-sora font-bold text-gold text-3xl">2012</div>
             </motion.div>
           </motion.div>
 

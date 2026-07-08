@@ -17,7 +17,7 @@ export const StudioHub: React.FC = () => {
             className="studio-hub__map-wrap"
           >
             <img
-              src={mapImg}
+              src={mapImg.src}
               alt="Archadia Design Hub Map in Mumbai, India"
               className="studio-hub__map-img"
             />

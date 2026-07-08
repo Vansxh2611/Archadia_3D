@@ -26,6 +26,14 @@
 
   :root {
     --color-heading: #94753c;
+    --bg-page: var(--color-bg-primary);
+    --bg-card: var(--color-surface);
+    --bg-card-soft: var(--color-bg-secondary);
+    --accent: var(--color-gold);
+    --accent-light: var(--color-gold-light);
+    --text-primary: var(--color-text-primary);
+    --text-muted: var(--color-text-secondary);
+    --border-subtle: var(--color-divider);
   }
 
   html, body, #root {
@@ -788,6 +796,7 @@ section.bg-\[\#0E0E0E\],
 section.bg-\[\#111111\],
 section.bg-bg-secondary,
 .services-methodology,
+.portfolio-approach,
 .portfolio-outcome,
 .portfolio-explore3d,
 .studio-section,
@@ -861,6 +870,25 @@ section.bg-bg-secondary,
     rgba(148, 117, 60, 0.6),
     transparent
   ) !important;
+}
+
+/* Transparent Golden Glassy Badge */
+.gold-glass-badge {
+  background: linear-gradient(135deg, rgba(255, 248, 235, 0.98) 0%, rgba(245, 227, 196, 0.97) 100%) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1.5px solid rgba(148, 117, 60, 0.45) !important;
+  box-shadow: 
+    0 16px 36px rgba(148, 117, 60, 0.15), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+.gold-glass-badge .font-inter {
+  color: #a38247 !important;
+}
+
+.gold-glass-badge .font-sora {
+  color: #94753c !important;
 }
 
 

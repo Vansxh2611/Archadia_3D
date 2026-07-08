@@ -57,13 +57,13 @@ export const PortfolioExplore3D: React.FC = () => {
     <section className="portfolio-explore3d">
       <div className="container-luxury">
         <div className="portfolio-explore3d__header-text">
-          <span className="font-inter text-xs tracking-[0.3em] text-[#E6C383] uppercase mb-4 block">
+          <span className="font-inter text-xs tracking-[0.3em] text-accent uppercase mb-4 block">
             Interactive
           </span>
-          <h2 className="font-sora font-bold text-white mb-6" style={{ fontSize: 'clamp(32px, 5vw, 52px)' }}>
+          <h2 className="font-sora font-bold text-text-primary mb-6" style={{ fontSize: 'clamp(32px, 5vw, 52px)' }}>
             Explore in <span className="gradient-gold">3D</span>
           </h2>
-          <p className="font-inter text-[#B8B8B8] text-lg max-w-2xl mb-12 leading-relaxed">
+          <p className="font-inter text-text-secondary text-lg max-w-2xl mb-12 leading-relaxed">
             Interact with our architectural concepts in real time. Inspect façades, change angles, and experience spatial scale directly in your browser.
           </p>
         </div>

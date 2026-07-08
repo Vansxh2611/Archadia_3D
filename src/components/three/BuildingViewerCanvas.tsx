@@ -97,7 +97,7 @@ const FallbackDetailedBuilding: React.FC = () => {
         <boxGeometry args={[0.6, 2.0, 0.6]} />
         <meshStandardMaterial color="#ffffff" wireframe transparent opacity={0.2} />
       </mesh>
-      
+
       {/* Front cantilever slab */}
       <mesh position={[-0.4, 0.6, 0.8]}>
         <boxGeometry args={[1.2, 0.05, 0.8]} />
@@ -222,7 +222,7 @@ export const BuildingViewerCanvas: React.FC<BuildingViewerCanvasProps> = ({
         <Suspense fallback={<LoadingSpinner />}>
           {/* Lighting Rig */}
           <ambientLight intensity={0.35} />
-          
+
           <directionalLight
             position={[5, 8, 5]}
             intensity={1.8}
