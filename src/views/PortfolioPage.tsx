@@ -10,6 +10,7 @@ import type { FilterCategory, PortfolioItem } from '../types';
 import { PortfolioApproach } from '../components/sections/PortfolioApproach';
 import { PortfolioOutcome } from '../components/sections/PortfolioOutcome';
 import { PortfolioExplore3D } from '../components/sections/PortfolioExplore3D';
+import { AnimatedStatistic } from '../components/layout/AnimatedStatistic';
 import '../styles/portfolio.css';
 
 const FILTERS: { label: string; value: FilterCategory }[] = [
@@ -157,7 +158,9 @@ export default function PortfolioPage() {
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] }}
                 className="clients-stats__card"
               >
-                <div className="clients-stats__value gradient-gold">{stat.value}</div>
+                 <div className="clients-stats__value gradient-gold !p-0 !flex !justify-center">
+                   <AnimatedStatistic value={stat.value} delay={i * 0.08} />
+                 </div>
                 <p className="clients-stats__label">{stat.label}</p>
                 <div className="clients-stats__card-glow" />
               </motion.div>

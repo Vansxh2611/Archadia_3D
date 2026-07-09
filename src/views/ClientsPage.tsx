@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, ArrowRight, Star } from 'lucide-react';
 import Link from 'next/link';
 import { TESTIMONIALS, CLIENT_LOGOS } from '../utils/data';
 import ClientLogoWall from '../sections/ClientLogoWall';
+import { AnimatedStatistic } from '../components/layout/AnimatedStatistic';
 import '../styles/clients.css';
 
 const CLIENT_DETAILS = [
@@ -93,7 +94,9 @@ export default function ClientsPage() {
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] }}
                 className="clients-stats__card bg-[#ffffff] border border-black/[0.08]"
               >
-                <div className="clients-stats__value gradient-gold">{stat.value}</div>
+                <div className="clients-stats__value gradient-gold !p-0 !flex !justify-center">
+                   <AnimatedStatistic value={stat.value} delay={i * 0.08} />
+                 </div>
                 <p className="clients-stats__label text-text-secondary">{stat.label}</p>
                 <div className="clients-stats__card-glow" />
               </motion.div>

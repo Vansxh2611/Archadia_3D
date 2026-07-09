@@ -1,18 +1,13 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useCountUp } from '../hooks';
 import { STATS } from '../utils/data';
+import AnimatedStatistic from '../components/layout/AnimatedStatistic';
 
-function StatItem({ value, suffix, label }: { value: number; suffix: string; label: string; delay: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useInView(ref, { once: true, margin: '-50px' });
-  const count = useCountUp(value, 2000, isVisible);
-
+function StatItem({ value, suffix, label, delay }: { value: number; suffix: string; label: string; delay: number }) {
   return (
-    <div ref={ref} className="stat-item">
-      <div className="stat-value font-sora">
-        {count}
-        <span className="text-[#E6C383]">{suffix}</span>
+    <div className="stat-item">
+      <div className="stat-value font-sora !p-0 !flex !justify-center">
+        <AnimatedStatistic value={`${value}${suffix}`} delay={delay} />
       </div>
       <div className="stat-label font-inter">{label}</div>
     </div>

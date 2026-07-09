@@ -381,6 +381,7 @@
     position: relative;
     padding: 0.75rem 1.5rem 1rem;
     text-align: center;
+    overflow: hidden;
   }
 
   .stat-item:not(:last-child)::after {
@@ -424,6 +425,12 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     color: #fdf5e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
   }
 
   .stat-label {
@@ -434,6 +441,58 @@
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: rgba(230, 230, 230, 0.72);
+  }
+
+  /* Stats Shimmer Hover System */
+  .stats-shimmer {
+    position: absolute;
+    inset: 0;
+    width: 150%;
+    pointer-events: none;
+    mix-blend-overlay: overlay;
+    z-index: 20;
+    will-change: transform;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+
+  /* Primary wide gold sweep */
+  .stats-shimmer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background: linear-gradient(90deg, transparent 10%, rgba(230,195,131,0.01) 35%, rgba(230,195,131,0.05) 50%, rgba(230,195,131,0.01) 65%, transparent 90%);
+    filter: blur(8px);
+    transform: translateX(-150%) skewX(-15deg);
+    transition: transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: transform;
+  }
+
+  /* Secondary thin white sweep (slightly delayed) */
+  .stats-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background: linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.01) 42%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.01) 58%, transparent 80%);
+    filter: blur(4px);
+    transform: translateX(-150%) skewX(-15deg);
+    transition: transform 1.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0.12s;
+    will-change: transform;
+  }
+
+  .clients-stats__card:hover .stats-shimmer::before,
+  .stat-item:hover .stats-shimmer::before,
+  .stats-shimmer-parent:hover .stats-shimmer::before {
+    transform: translateX(250%) skewX(-15deg);
+  }
+
+  .clients-stats__card:hover .stats-shimmer::after,
+  .stat-item:hover .stats-shimmer::after,
+  .stats-shimmer-parent:hover .stats-shimmer::after {
+    transform: translateX(250%) skewX(-15deg);
   }
 
   @media (max-width: 768px) {
