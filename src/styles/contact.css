@@ -1,4 +1,5 @@
 .contact-page {
+  --bg-page: #ffffff;
   background-color: var(--bg-page);
   color: var(--text-primary);
   padding: 100px 6vw 96px;
