@@ -27,7 +27,9 @@
   border-radius: 16px;
   border: 1px solid var(--border-subtle);
   padding: 40px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.02),
+    0 30px 80px rgba(148, 117, 60, 0.03);
 }
 
 .contact-card--studio {

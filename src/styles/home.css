@@ -1,13 +1,13 @@
 /* Theme & tokens */
 :root {
-  --bg-page: #FAF8F5;
-  --bg-card: #FCFAF7;
-  --bg-card-soft: #F3EFEA;
+  --bg-page: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-soft: #f8f9fa;
   --accent: #9E7E47;
   --accent-light: #B5945B;
   --text-primary: #1D1C1A;
   --text-muted: #6A665E;
-  --border-subtle: rgba(158, 126, 71, 0.12);
+  --border-subtle: rgba(158, 126, 71, 0.08);
   --font-sora: 'Sora', sans-serif;
   --font-inter: 'Inter', sans-serif;
 }
@@ -58,7 +58,7 @@
 }
 
 .services-grid__card {
-  background: rgba(252, 250, 247, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(158, 126, 71, 0.12);
@@ -72,7 +72,7 @@
 .services-grid__card:hover {
   transform: translateY(-8px);
   border-color: rgba(158, 126, 71, 0.3);
-  background: rgba(252, 250, 247, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 25px 50px rgba(158, 126, 71, 0.06), 0 0 40px rgba(158, 126, 71, 0.02);
 }
 
@@ -117,7 +117,7 @@
 }
 
 .selected-works__card {
-  background: rgba(252, 250, 247, 0.82);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(158, 126, 71, 0.12);
@@ -130,7 +130,7 @@
 .selected-works__card:hover {
   transform: translateY(-6px);
   border-color: rgba(158, 126, 71, 0.3);
-  background: rgba(252, 250, 247, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 25px 50px rgba(158, 126, 71, 0.06), 0 0 40px rgba(158, 126, 71, 0.02);
 }
 
