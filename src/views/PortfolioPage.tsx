@@ -61,9 +61,8 @@ function PortfolioCard({ item, index }: { item: PortfolioItem; index: number }) 
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.6, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative overflow-hidden rounded-2xl cursor-pointer selected-works__card flex flex-col ${
-        item.tall ? 'row-span-2' : ''
-      }`}
+      className={`group relative overflow-hidden rounded-2xl cursor-pointer selected-works__card flex flex-col ${item.tall ? 'row-span-2' : ''
+        }`}
       style={{ minHeight: item.tall ? '620px' : '300px' }}
     >
       <figure className="selected-works__image-wrapper w-full flex-grow overflow-hidden relative">
@@ -158,9 +157,9 @@ export default function PortfolioPage() {
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] }}
                 className="clients-stats__card"
               >
-                 <div className="clients-stats__value gradient-gold !p-0 !flex !justify-center">
-                   <AnimatedStatistic value={stat.value} delay={i * 0.08} />
-                 </div>
+                <div className="clients-stats__value gradient-gold !p-0 !flex !justify-center">
+                  <AnimatedStatistic value={stat.value} delay={i * 0.08} />
+                </div>
                 <p className="clients-stats__label">{stat.label}</p>
                 <div className="clients-stats__card-glow" />
               </motion.div>

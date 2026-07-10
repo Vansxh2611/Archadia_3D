@@ -67,7 +67,7 @@ const FallbackSculpture: React.FC = () => {
           metalness={0.8}
         />
       </mesh>
-      
+
       {/* Architectural Outer Frame */}
       <mesh>
         <octahedronGeometry args={[2.0, 0]} />
@@ -206,7 +206,7 @@ export const HeroSculptureCanvas: React.FC<HeroSculptureCanvasProps> = ({
         <Suspense fallback={<LoadingSpinner />}>
           {/* Subtle Ambient base */}
           <ambientLight intensity={0.5} />
-          
+
           {/* Key Spotlight (warm gold) */}
           <directionalLight
             position={[4, 5, 2]}

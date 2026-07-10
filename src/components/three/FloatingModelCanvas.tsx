@@ -62,7 +62,7 @@ const FallbackBuildingModel: React.FC = () => {
           metalness={0.9}
         />
       </mesh>
-      
+
       {/* Side wings */}
       <mesh position={[-1.0, -0.4, 0]}>
         <boxGeometry args={[0.8, 1.6, 0.8]} />
@@ -188,7 +188,7 @@ export const FloatingModelCanvas: React.FC<FloatingModelCanvasProps> = ({
         <Suspense fallback={<LoadingSpinner />}>
           {/* Lighting Rig */}
           <ambientLight intensity={0.4} />
-          
+
           {/* Main Key overhead */}
           <directionalLight
             position={[2, 6, 3]}

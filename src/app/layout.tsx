@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import ClientLayout from './client-layout';
 import './globals.css';
+import '../styles/home.css';
+import '../styles/clients.css';
+import '../styles/portfolio.css';
+import '../styles/services.css';
+import '../styles/studio.css';
+import '../styles/contact.css';
+import '../styles/footer.css';
 
 export const metadata: Metadata = {
   title: 'Archadia 3D | Architectural Visualization Studio in Mumbai, India',

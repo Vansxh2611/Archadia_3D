@@ -22,9 +22,8 @@ function PortfolioCard({ item, index }: { item: PortfolioItem; index: number }) 
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative overflow-hidden rounded-2xl cursor-pointer card-shadow ${
-        item.tall ? 'row-span-2' : ''
-      }`}
+      className={`group relative overflow-hidden rounded-2xl cursor-pointer card-shadow ${item.tall ? 'row-span-2' : ''
+        }`}
       style={{ minHeight: item.tall ? '500px' : '280px' }}
     >
       <img

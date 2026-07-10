@@ -4,6 +4,9 @@ import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
+let isHydratedGlobal = false;
+const animatedKeys = new Set<string>();
+
 interface AnimatedStatisticProps {
   value: string; // e.g. "180+", "98%", "1.8M", "$150K"
   duration?: number;
@@ -26,11 +29,14 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
   const shouldReduceMotion = useReducedMotion();
   
   const [isHovered, setIsHovered] = useState(false);
-  const [phase, setPhase] = useState<'blueprint' | 'rolling' | 'locked'>('blueprint');
-  const [mounted, setMounted] = useState(false);
+  const [phase, setPhase] = useState<'blueprint' | 'rolling' | 'locked'>(() => {
+    return animatedKeys.has(value) ? 'locked' : 'blueprint';
+  });
+  const [mounted, setMounted] = useState(() => isHydratedGlobal);
   const [portalTarget, setPortalTarget] = useState<Element | null>(null);
 
   useEffect(() => {
+    isHydratedGlobal = true;
     setMounted(true);
   }, []);
 
@@ -70,6 +76,11 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
 
   // 2. Control Phase Sequencing
   useEffect(() => {
+    if (animatedKeys.has(value)) {
+      setPhase('locked');
+      return;
+    }
+
     if (!isInView || shouldReduceMotion) {
       if (shouldReduceMotion) setPhase('locked');
       return;
@@ -86,13 +97,14 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
     // Step 3: Locked in position (snapped, grid fades)
     const lockTimer = setTimeout(() => {
       setPhase('locked');
+      animatedKeys.add(value);
     }, 450 + duration * 1000);
 
     return () => {
       clearTimeout(rollingTimer);
       clearTimeout(lockTimer);
     };
-  }, [isInView, duration, shouldReduceMotion]);
+  }, [isInView, duration, shouldReduceMotion, value]);
 
   // If accessibility prefers reduced motion, render clean text instantly
   if (shouldReduceMotion) {
@@ -114,7 +126,7 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
       {blueprint && (
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none z-0"
-          style={{ opacity: phase === 'locked' ? 0.25 : 0.8, transition: 'opacity 0.8s ease' }}
+          style={{ opacity: 0.35 }}
         >
           {/* Outer Crosshair Guidelines */}
           <motion.line
@@ -226,7 +238,7 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
           />
 
           {/* Coordinates Label */}
-          {phase === 'blueprint' && (
+          {isInView && (
             <text
               x="12%"
               y="23%"
@@ -234,7 +246,7 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
               fontSize="6"
               fontFamily="monospace"
               letterSpacing="0.1em"
-              opacity="0.6"
+              opacity="0.3"
             >
               SCALE 1:1 // SEC_0{parsed.digits.length}
             </text>
@@ -260,7 +272,7 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
         }}
       >
         {/* Dynamic Sweep Highlight Portal (CSS-Hover Controlled, swept across entire parent card/column) */}
-        {highlight && phase === 'locked' && portalTarget && createPortal(
+        {highlight && portalTarget && createPortal(
           <div className="stats-shimmer" />,
           portalTarget
         )}
@@ -280,7 +292,7 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
               const showDecimal = parsed.decimalIdx !== null && colIdx === parsed.decimalIdx;
 
               // Only roll to final value if mounted, in view, and phase is rolling/locked
-              const targetDigit = (mounted && isInView && (phase === 'rolling' || phase === 'locked'))
+              const targetDigit = (animatedKeys.has(value) || (mounted && isInView && (phase === 'rolling' || phase === 'locked')))
                 ? digit
                 : 0;
 
@@ -293,14 +305,14 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
                   )}
                   <div className="w-[0.72em] min-w-[0.72em] h-[1.3em] overflow-hidden relative flex flex-col items-center px-[0.04em]">
                     <motion.div
-                      initial={{ y: '0em' }}
+                      initial={{ y: animatedKeys.has(value) ? `-${targetDigit * 1.3}em` : '0em' }}
                       animate={{ y: `-${targetDigit * 1.3}em` }}
                       transition={{
                         type: 'spring',
                         stiffness: 45, // Heavy mechanical feel
                         damping: 11,   // Slight overshoot bounce
                         mass: 0.8,     // Weighted physics
-                        delay: delay + colIdx * 0.12, // Distinct column stagger
+                        delay: animatedKeys.has(value) ? 0 : (delay + colIdx * 0.12), // Distinct column stagger
                       }}
                       className="flex flex-col w-full"
                       style={{
@@ -334,24 +346,20 @@ export const AnimatedStatistic: React.FC<AnimatedStatisticProps> = ({
               filter: phase === 'blueprint' ? 'blur(0.5px)' : 'blur(0px)',
             }}
           >
-            {(mounted && (phase === 'rolling' || phase === 'locked')) ? parsed.rawNumStr : parsed.rawNumStr.replace(/[0-9]/g, '0')}
+            {(animatedKeys.has(value) || (mounted && (phase === 'rolling' || phase === 'locked'))) ? parsed.rawNumStr : parsed.rawNumStr.replace(/[0-9]/g, '0')}
           </span>
         )}
 
         {/* 3. Suffix (e.g. +, %, K, Years) */}
         {parsed.suffix && (
-          <motion.span
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={phase === 'locked' ? { opacity: 1, scale: 1 } : { opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-            className="text-[0.45em] ml-1 font-sora font-semibold select-none"
+          <span
+            className="text-[0.45em] ml-1 font-sora font-semibold select-none opacity-90"
             style={{
               transform: 'translateY(-0.03em)', // fine-tuned baseline shift
-              willChange: 'transform, opacity',
             }}
           >
             {parsed.suffix}
-          </motion.span>
+          </span>
         )}
       </motion.div>
     </div>
