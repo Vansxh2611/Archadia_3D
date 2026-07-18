@@ -13,7 +13,7 @@ export default function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section id="home" ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]">
+    <section id="home" ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-white">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-grid opacity-20" />
       <div className="bg-grid-precision" />
@@ -28,8 +28,8 @@ export default function HeroSection() {
       </div>
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/75 to-transparent z-1" />
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#050505] to-transparent z-1" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent z-1" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent z-1" />
 
       <div className="container-luxury relative z-10 w-full pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
@@ -125,7 +125,7 @@ export default function HeroSection() {
                     style={{ maxHeight: '620px', objectPosition: 'center top' }}
                     loading="eager"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/40 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent" />
                 </div>
 
                 {/* Frame border */}

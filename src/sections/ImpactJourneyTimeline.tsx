@@ -63,10 +63,10 @@ export const ImpactJourneyTimeline: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen w-full bg-[#050509] py-32 overflow-hidden border-t border-white/[0.03]"
+      className="relative min-h-screen w-full bg-white py-32 overflow-hidden border-t border-black/[0.03]"
     >
       {/* Background blueprint details */}
-      <div className="absolute inset-0 bg-grid opacity-[0.04] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid opacity-[0.08] pointer-events-none" />
 
       <div className="container-luxury relative z-10 w-full">
         {/* HEADER: Section Intro */}
@@ -76,7 +76,7 @@ export const ImpactJourneyTimeline: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.02] border border-white/[0.05] mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/[0.02] border border-black/[0.05] mb-6"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-[#E6C383]" />
             <span className="font-inter text-[10px] font-semibold tracking-[0.2em] text-[#E6C383] uppercase">
@@ -108,7 +108,7 @@ export const ImpactJourneyTimeline: React.FC = () => {
         {/* TIMELINE CONTAINER */}
         <div className="relative mt-20 max-w-[1000px] mx-auto">
           {/* Base Spine Line (Subtle track) */}
-          <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-[2px] bg-white/[0.04] -translate-x-1/2 pointer-events-none" />
+          <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-[2px] bg-black/[0.04] -translate-x-1/2 pointer-events-none" />
 
           {/* Filled Gold Progress Spine Line */}
           <motion.div
@@ -129,7 +129,7 @@ export const ImpactJourneyTimeline: React.FC = () => {
                   } items-start lg:items-center w-full`}
                 >
                   {/* Timeline node marker indicator */}
-                  <div className="absolute left-8 lg:left-1/2 w-6 h-6 rounded-full bg-[#050509] border border-white/20 -translate-x-1/2 flex items-center justify-center z-10">
+                  <div className="absolute left-8 lg:left-1/2 w-6 h-6 rounded-full bg-white border border-black/10 -translate-x-1/2 flex items-center justify-center z-10">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
@@ -158,10 +158,10 @@ export const ImpactJourneyTimeline: React.FC = () => {
                       }
                       viewport={{ once: true, margin: '-100px' }}
                       transition={{ duration: 0.85, ease: [0.22, 0.61, 0.36, 1] }}
-                      className="w-full max-w-[460px] border border-white/10 bg-white/[0.01] backdrop-blur-md hover:border-[#E6C383]/25 transition-all duration-500 rounded-2xl p-6 md:p-8 flex flex-col gap-3 group relative overflow-hidden"
+                      className="w-full max-w-[460px] border border-black/[0.08] bg-white/[0.65] backdrop-blur-md hover:border-[#E6C383]/25 transition-all duration-500 rounded-2xl p-6 md:p-8 flex flex-col gap-3 group relative overflow-hidden"
                     >
                       {/* Step card overlay lines */}
-                      <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[linear-gradient(to_bottom_right,transparent_80%,rgba(230,195,131,0.02))] z-0" />
+                      <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[linear-gradient(to_bottom_right,transparent_80%,rgba(148,117,60,0.02))] z-0" />
 
                       <span className="font-mono text-[10px] font-semibold text-[#E6C383]/70 tracking-[0.2em] uppercase z-10">
                         {step.number} — {step.subtitle}

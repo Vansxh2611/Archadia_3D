@@ -24,7 +24,7 @@ export default function ClientsSection() {
   const next = () => setActiveIdx(i => (i + 1) % TESTIMONIALS.length);
 
   return (
-    <section id="clients" className="bg-[#050505] section-padding">
+    <section id="clients" className="bg-white section-padding">
       <div className="container-luxury">
         <motion.div
           ref={headerRef}
@@ -47,7 +47,7 @@ export default function ClientsSection() {
           initial={{ opacity: 0 }}
           animate={logosVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden mb-24"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-black/[0.06] rounded-2xl overflow-hidden mb-24"
         >
           {CLIENT_LOGOS.map((logo, i) => (
             <motion.div
@@ -55,7 +55,7 @@ export default function ClientsSection() {
               initial={{ opacity: 0 }}
               animate={logosVisible ? { opacity: 1 } : {}}
               transition={{ delay: i * 0.07 }}
-              className="group bg-[#0E0E0E] hover:bg-[#111111] flex items-center justify-center p-8 transition-colors duration-300"
+              className="group bg-white hover:bg-neutral-50 flex items-center justify-center p-8 transition-colors duration-300"
             >
               <span className="font-sora font-bold text-[#B8B8B8]/40 group-hover:text-[#E6C383]/60 text-xs tracking-[0.2em] text-center transition-colors duration-300">
                 {logo}
@@ -130,7 +130,7 @@ export default function ClientsSection() {
                   className={`transition-all duration-300 rounded-full focus:outline-none ${
                     i === activeIdx
                       ? 'w-6 h-2 bg-[#E6C383]'
-                      : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                      : 'w-2 h-2 bg-black/10 hover:bg-black/20'
                   }`}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />

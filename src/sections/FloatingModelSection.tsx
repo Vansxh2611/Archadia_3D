@@ -13,10 +13,10 @@ export const FloatingModelSection: React.FC = () => {
     <section className="relative min-h-screen w-full flex items-center bg-bg-primary py-24 overflow-hidden border-t border-black/[0.05]">
       {/* Subtle blueprint accent grid lines on Section background */}
       <div className="absolute inset-0 bg-grid opacity-[0.05] pointer-events-none" />
-      
+
       <div className="container-luxury relative z-10 w-full">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-10 xl:gap-20 items-center">
-          
+
           {/* LEFT SIDE: Typography Content */}
           <motion.div
             initial={{ opacity: 0, x: -35 }}
@@ -80,7 +80,7 @@ export const FloatingModelSection: React.FC = () => {
             className="lg:col-span-6 flex justify-center w-full"
           >
             <div className="relative w-full max-w-[540px] aspect-[4/4.5] md:aspect-[4/4] lg:aspect-[4/4.8] xl:aspect-[4/4] rounded-2xl overflow-hidden glass-panel border border-black/[0.06] bg-bg-secondary/40 p-4 backdrop-blur-md shadow-2xl flex flex-col justify-between">
-              
+
               {/* Technical Drawing Blueprint Overlay details */}
               <div className="absolute inset-4 border border-dashed border-black/[0.08] pointer-events-none rounded-xl" />
               <div className="absolute top-[20%] left-0 w-full h-px bg-black/[0.03] pointer-events-none" />

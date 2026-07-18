@@ -25,7 +25,7 @@ function ProcessStepCard({
     >
       {/* Number bubble + connector */}
       <div className="relative flex-none flex flex-col items-center">
-        <div className="w-20 h-20 flex items-center justify-center bg-[#111111] border border-white/5 group-hover:border-[#E6C383]/30 rounded-2xl transition-all duration-500 z-10 relative group-hover:bg-[#111111] card-shadow">
+        <div className="w-20 h-20 flex items-center justify-center bg-white border border-black/[0.08] group-hover:border-[#E6C383]/30 rounded-2xl transition-all duration-500 z-10 relative group-hover:bg-white card-shadow">
           <span className="font-sora font-bold gradient-gold text-lg">{step.number}</span>
         </div>
         {/* Animated connector line */}
@@ -60,7 +60,7 @@ export default function ProcessSection() {
   const headerVisible = useInView(headerRef, { once: true });
 
   return (
-    <section id="process" className="bg-[#0E0E0E] section-padding">
+    <section id="process" className="bg-white section-padding">
       <div className="container-luxury">
         <motion.div
           ref={headerRef}
@@ -78,7 +78,7 @@ export default function ProcessSection() {
           >
             How We Work
           </h2>
-          <div className="mt-8 h-px bg-gradient-to-r from-[#E6C383]/30 via-white/5 to-transparent" />
+          <div className="mt-8 h-px bg-gradient-to-r from-[#E6C383]/30 via-black/[0.05] to-transparent" />
         </motion.div>
 
         {/* Timeline */}

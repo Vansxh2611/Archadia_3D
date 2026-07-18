@@ -296,6 +296,7 @@ export default function ArchSection() {
                               src={letter.img}
                               alt={letter.title}
                               className="w-full h-full object-cover"
+                              style={{ filter: `url(#liquid-chrome-${letter.char})` }}
                               initial={{ scale: 1.12 }}
                               animate={{ scale: 1 }}
                               exit={{ scale: 1.12 }}
@@ -310,7 +311,7 @@ export default function ArchSection() {
                               className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20"
                             >
                               <div className="px-4 py-2 bg-[#0F0F0F]/85 backdrop-blur-md border border-white/10 rounded-full whitespace-nowrap shadow-lg">
-                                <span className="font-inter text-[10px] sm:text-xs tracking-wider text-white font-medium">
+                                <span className="font-inter text-[10px] sm:text-xs tracking-wider text-white-force font-medium">
                                   {letter.title}
                                 </span>
                               </div>

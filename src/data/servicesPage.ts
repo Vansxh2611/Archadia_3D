@@ -2,6 +2,7 @@ export interface Capability {
   title: string;
   subtitle: string;
   desc: string;
+  slug: string;
 }
 
 export interface HighlightProject {
@@ -34,32 +35,38 @@ export const coreCapabilities: Capability[] = [
   {
     title: "Architectural Visualization",
     subtitle: "Exterior Renders & Masterplans",
-    desc: "Photo-realistic exterior imagery that frames towers, villas, and townships before a single brick is laid."
+    desc: "Photo-realistic exterior imagery that frames towers, villas, and townships before a single brick is laid.",
+    slug: "architectural-visualization"
   },
   {
     title: "Interior Rendering",
     subtitle: "Spatial Experience & Atmosphere",
-    desc: "Cinematic interior visuals focused on light, material, and emotion."
+    desc: "Cinematic interior visuals focused on light, material, and emotion.",
+    slug: "interior-rendering"
   },
   {
     title: "Product Visualization",
     subtitle: "Design Objects & Fixtures",
-    desc: "High-end renders for furniture, lighting, and building products."
+    desc: "High-end renders for furniture, lighting, and building products.",
+    slug: "product-visualization"
   },
   {
     title: "Virtual Experiences",
     subtitle: "Interactive VR Walkthroughs",
-    desc: "Real-time Unreal Engine walkthroughs that let clients inhabit future spaces."
+    desc: "Real-time Unreal Engine walkthroughs that let clients inhabit future spaces.",
+    slug: "virtual-experiences"
   },
   {
     title: "3D Animation",
     subtitle: "Cinematic Fly-through Films",
-    desc: "Narrative films for launches, sales galleries, and competitions."
+    desc: "Narrative films for launches, sales galleries, and competitions.",
+    slug: "3d-animation"
   },
   {
     title: "Design Consulting",
     subtitle: "Strategic Creative Direction",
-    desc: "Visual strategy and asset systems for architecture and real estate brands."
+    desc: "Visual strategy and asset systems for architecture and real estate brands.",
+    slug: "design-consulting"
   }
 ];
 

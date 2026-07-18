@@ -49,11 +49,11 @@ function TeamCard({ member, delay }: { member: TeamMember; delay: number }) {
       initial={{ opacity: 0, y: 50 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative bg-[#111111] rounded-2xl overflow-hidden border border-white/5 hover:border-[#E6C383]/30 transition-all duration-500 card-shadow"
+      className="group relative bg-white rounded-2xl overflow-hidden border border-black/[0.08] hover:border-[#E6C383]/30 transition-all duration-500 card-shadow"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E6C383]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
-      <div className="relative h-48 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center overflow-hidden">
+      <div className="relative h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <svg width="70" height="70" viewBox="0 0 80 80" fill="none" className="opacity-20 group-hover:opacity-35 transition-opacity duration-500 relative z-10">
           <circle cx="40" cy="30" r="16" stroke="#E6C383" strokeWidth="1.5" />
@@ -83,15 +83,15 @@ export default function StudioPage() {
   const heroImgVisible = useInView(heroImgRef, { once: true, margin: '-80px' });
 
   return (
-    <main className="bg-[#050505] min-h-screen">
+    <main className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end pb-20 overflow-hidden bg-[#050505]">
+      <section className="relative min-h-[60vh] flex items-end pb-20 overflow-hidden bg-white">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div
           className="absolute top-1/3 left-1/4 w-[700px] h-[500px] rounded-full opacity-[0.07] blur-[130px]"
           style={{ background: 'radial-gradient(circle, #E6C383 0%, transparent 70%)' }}
         />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050505] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
 
         <div className="container-luxury relative z-10 pt-40">
           <motion.div
@@ -126,7 +126,7 @@ export default function StudioPage() {
       <SectionDivider />
 
       {/* About Section */}
-      <SectionReveal as="section" className="section-padding bg-[#050505]">
+      <SectionReveal as="section" className="section-padding bg-white">
         <div className="container-luxury">
           <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
             {/* Image */}
@@ -145,7 +145,7 @@ export default function StudioPage() {
                   style={{ maxHeight: '640px', objectFit: 'cover' }}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#050505]/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/50 via-transparent to-transparent" />
               </div>
               <div className="absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-[#E6C383]/60" />
               <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-[#E6C383]/60" />
@@ -224,7 +224,7 @@ export default function StudioPage() {
       <SectionDivider />
 
       {/* Team */}
-      <SectionReveal as="section" className="bg-[#050505] section-padding">
+      <SectionReveal as="section" className="bg-white section-padding">
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -274,7 +274,7 @@ export default function StudioPage() {
       <SectionDivider />
 
       {/* CTA */}
-      <SectionReveal as="section" className="relative bg-[#0E0E0E] py-28 overflow-hidden">
+      <SectionReveal as="section" className="relative bg-white py-28 overflow-hidden">
         <div
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
           aria-hidden="true"

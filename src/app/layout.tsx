@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import ClientLayout from './client-layout';
 import './globals.css';
+import 'lenis/dist/lenis.css';
 import '../styles/home.css';
 import '../styles/clients.css';
 import '../styles/portfolio.css';

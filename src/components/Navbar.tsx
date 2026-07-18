@@ -41,22 +41,20 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <ul className="hidden lg:flex items-center gap-8">
             {NAV_ITEMS.map((item: NavItem) => {
-              const isActive = item.href === '/' 
-                ? pathname === '/' 
+              const isActive = item.href === '/'
+                ? pathname === '/'
                 : pathname === item.href || pathname?.startsWith(item.href + '/');
               return (
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className={`relative font-inter text-sm tracking-wide focus:outline-none group ${
-                      isActive ? 'nav-link--active' : 'nav-link'
-                    }`}
+                    className={`relative font-inter text-sm tracking-wide focus:outline-none group ${isActive ? 'nav-link--active' : 'nav-link'
+                      }`}
                   >
                     {item.label}
                     <span
-                      className={`absolute -bottom-1 left-0 h-px bg-[#E6C383] transition-all duration-300 ${
-                        isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                      }`}
+                      className={`absolute -bottom-1 left-0 h-px bg-[#E6C383] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                        }`}
                     />
                   </Link>
                 </li>
@@ -104,8 +102,8 @@ export default function Navbar() {
           >
             <ul className="flex flex-col gap-6 mt-4">
               {NAV_ITEMS.map((item: NavItem, i: number) => {
-                const isActive = item.href === '/' 
-                  ? pathname === '/' 
+                const isActive = item.href === '/'
+                  ? pathname === '/'
                   : pathname === item.href || pathname?.startsWith(item.href + '/');
                 return (
                   <motion.li
@@ -117,9 +115,8 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={closeMenu}
-                      className={`font-sora text-2xl font-light focus:outline-none ${
-                        isActive ? 'mobile-nav-link--active' : 'mobile-nav-link'
-                      }`}
+                      className={`font-sora text-2xl font-light focus:outline-none ${isActive ? 'mobile-nav-link--active' : 'mobile-nav-link'
+                        }`}
                     >
                       {item.label}
                     </Link>

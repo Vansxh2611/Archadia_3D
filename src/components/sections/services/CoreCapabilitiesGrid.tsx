@@ -1,22 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { coreCapabilities } from '../../../data/servicesPage';
 
 export const CoreCapabilitiesGrid: React.FC = () => {
-  const handleScroll = (index: number) => {
-    const el = document.getElementById(`service-${index}`);
-    if (el) {
-      // Offset scroll to account for fixed navbar
-      const navbarOffset = 100;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <section className="page-section services-core-capabilities" aria-labelledby="capabilities-title">
       <div className="section-inner">
@@ -33,22 +20,27 @@ export const CoreCapabilitiesGrid: React.FC = () => {
 
           <div className="services-core-capabilities__grid">
             {coreCapabilities.map((cap, i) => (
-              <motion.div
+              <Link
                 key={cap.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.08 }}
-                onClick={() => handleScroll(i)}
-                className="services-core-capabilities__card"
+                href={`/services/${cap.slug}`}
+                className="block no-underline"
+                prefetch={true}
               >
-                <span className="services-core-capabilities__subtitle">{cap.subtitle}</span>
-                <h3 className="services-core-capabilities__title">{cap.title}</h3>
-                <p className="services-core-capabilities__desc">{cap.desc}</p>
-                <div className="services-core-capabilities__indicator">
-                  Explore Detail <span>➝</span>
-                </div>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  className="services-core-capabilities__card h-full"
+                >
+                  <span className="services-core-capabilities__subtitle">{cap.subtitle}</span>
+                  <h3 className="services-core-capabilities__title">{cap.title}</h3>
+                  <p className="services-core-capabilities__desc">{cap.desc}</p>
+                  <div className="services-core-capabilities__indicator">
+                    Explore Detail <span>➝</span>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

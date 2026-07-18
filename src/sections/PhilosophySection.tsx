@@ -26,7 +26,7 @@ export default function PhilosophySection() {
   const pillarsVisible = useInView(pillarsRef, { once: true, margin: '-80px' });
 
   return (
-    <section id="philosophy" className="relative bg-[#0E0E0E] section-padding overflow-hidden">
+    <section id="philosophy" className="relative bg-white section-padding overflow-hidden">
       {/* Background glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] blur-[160px] opacity-[0.06]"

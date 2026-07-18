@@ -169,15 +169,15 @@ import { SectionDivider } from '../components/SectionDivider';
 
 export default function CaseStudiesPage() {
   return (
-    <main className="bg-[#050505] min-h-screen">
+    <main className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end pb-20 overflow-hidden bg-[#050505]">
+      <section className="relative min-h-[60vh] flex items-end pb-20 overflow-hidden bg-white">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div
           className="absolute top-1/2 right-1/4 w-[700px] h-[500px] rounded-full opacity-[0.07] blur-[130px]"
           style={{ background: 'radial-gradient(circle, #E6C383 0%, transparent 70%)' }}
         />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050505] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
 
         <div className="container-luxury relative z-10 pt-40">
           <motion.div
@@ -216,7 +216,7 @@ export default function CaseStudiesPage() {
       <SectionDivider />
 
       {/* CTA */}
-      <SectionReveal as="section" className="relative bg-[#0E0E0E] py-28 overflow-hidden">
+      <SectionReveal as="section" className="relative bg-white py-28 overflow-hidden">
         <div
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
           aria-hidden="true"

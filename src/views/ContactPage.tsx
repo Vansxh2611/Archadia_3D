@@ -8,16 +8,16 @@ import { SectionDivider } from '../components/SectionDivider';
 
 export default function ContactPage() {
   return (
-    <main className="bg-[#050505] min-h-screen">
+    <main className="bg-white min-h-screen">
       {/* Contact Hero */}
-      <section className="relative min-h-[45vh] flex items-end pb-12 overflow-hidden bg-[#050505]" aria-labelledby="contact-hero-title">
+      <section className="relative min-h-[45vh] flex items-end pb-12 overflow-hidden bg-white" aria-labelledby="contact-hero-title">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-[0.05] blur-[150px]"
           style={{ background: 'radial-gradient(circle, #E6C383 0%, transparent 70%)' }}
           aria-hidden="true"
         />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#050505] to-transparent" aria-hidden="true" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" aria-hidden="true" />
 
         <div className="container-luxury relative z-10 pt-32">
           <div>
